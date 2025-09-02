@@ -1,0 +1,70 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.5.0",
+  "resource_changes": [
+    {
+      "address": "aws_vpc.main",
+      "module_address": "module.network",
+      "type": "aws_vpc",
+      "name": "main",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "cidr_block": "10.0.0.0/16",
+          "tags": {
+            "Name": "main-vpc-${data.aws_region.current.name}"
+          }
+        }
+      }
+    },
+    {
+      "address": "aws_subnet.public",
+      "module_address": "module.network",
+      "type": "aws_subnet", 
+      "name": "public",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "cidr_block": "10.0.1.0/24",
+          "vpc_id": "${aws_vpc.main.id}",
+          "availability_zone": "us-east-1a"
+        }
+      },
+      "depends_on": ["aws_vpc.main"]
+    },
+    {
+      "address": "aws_instance.web",
+      "type": "aws_instance",
+      "name": "web",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "ami": "ami-12345678",
+          "instance_type": "t2.micro",
+          "subnet_id": "${module.network.aws_subnet.public.id}",
+          "user_data": "echo ${aws_vpc.main.cidr_block}"
+        }
+      }
+    },
+    {
+      "address": "data.aws_region.current",
+      "type": "aws_region",
+      "name": "current",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["read"],
+        "before": null,
+        "after": {
+          "name": "us-east-1",
+          "description": "US East (N. Virginia)"
+        }
+      }
+    }
+  ]
+}

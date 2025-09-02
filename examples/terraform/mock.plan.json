@@ -1,0 +1,50 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.5.0",
+  "resource_changes": [
+    {
+      "address": "aws_vpc.main",
+      "type": "aws_vpc",
+      "name": "main",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "cidr_block": "10.0.0.0/16"
+        }
+      }
+    },
+    {
+      "address": "aws_subnet.public",
+      "type": "aws_subnet", 
+      "name": "public",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "cidr_block": "10.0.1.0/24",
+          "vpc_id": "aws_vpc.main"
+        }
+      },
+      "depends_on": ["aws_vpc.main"]
+    },
+    {
+      "address": "aws_instance.web",
+      "type": "aws_instance",
+      "name": "web",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "ami": "ami-12345678",
+          "instance_type": "t2.micro",
+          "subnet_id": "aws_subnet.public"
+        }
+      },
+      "depends_on": ["aws_subnet.public"]
+    }
+  ]
+}

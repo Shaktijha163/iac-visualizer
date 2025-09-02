@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  namespace: production
+  labels:
+    app: web
+    environment: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+        environment: production
+    spec:
+      containers:
+      - name: web-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: database_host
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: api_key
+        envFrom:
+        - configMapRef:
+            name: app-config
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: app-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  namespace: production
+spec:
+  selector:
+    app: web
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP

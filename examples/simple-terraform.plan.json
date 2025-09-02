@@ -1,0 +1,35 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.5.0",
+  "resource_changes": [
+    {
+      "address": "aws_instance.web",
+      "type": "aws_instance",
+      "name": "web",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "ami": "ami-12345678",
+          "instance_type": "t2.micro"
+        }
+      }
+    },
+    {
+      "address": "aws_security_group.web_sg",
+      "type": "aws_security_group",
+      "name": "web_sg",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "name": "web-sg",
+          "description": "Security group for web instance"
+        }
+      },
+      "depends_on": ["aws_instance.web"]
+    }
+  ]
+}

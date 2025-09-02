@@ -1,5 +1,7 @@
+# graph/models.py
 from typing import Dict, List, Optional, Any
 from pydantic import BaseModel
+
 
 class Node(BaseModel):
     id: str
@@ -9,11 +11,13 @@ class Node(BaseModel):
     group: Optional[str] = None
     attributes: Dict[str, Any] = {}
     
+
 class Edge(BaseModel):
     from_id: str
     to_id: str
     reason: str
     
+
 class ResourceGraph(BaseModel):
     nodes: List[Node] = []
     edges: List[Edge] = []
@@ -24,3 +28,9 @@ class ResourceGraph(BaseModel):
         
     def add_edge(self, edge: Edge):
         self.edges.append(edge)
+        
+    def find_node(self, node_id: str) -> Optional[Node]:
+        for node in self.nodes:
+            if node.id == node_id:
+                return node
+        return None

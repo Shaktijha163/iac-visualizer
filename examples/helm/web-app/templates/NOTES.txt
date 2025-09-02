@@ -1,0 +1,4 @@
+Welcome to {{ .Chart.Name }}!
+{{- if .Values.redis.enabled }}
+Redis is enabled for this deployment.
+{{- end }}

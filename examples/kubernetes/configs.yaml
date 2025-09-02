@@ -1,0 +1,16 @@
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: production
+data:
+  database_host: "postgres.production.svc.cluster.local"
+  log_level: "INFO"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secrets
+  namespace: production
+data:
+  api_key: "base64-encoded-value-here"
+  db_password: "base64-encoded-password-here"
