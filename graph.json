@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {
+      "id": "dummy:node:1",
+      "type": "dummy.type",
+      "name": "dummy-node",
+      "attributes": {
+        "source_file": "test.json"
+      }
+    }
+  ],
+  "edges": [],
+  "meta": {
+    "source": "test.json",
+    "type": "terraform"
+  }
+}
