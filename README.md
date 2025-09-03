@@ -1,14 +1,11 @@
-# 🏗️ IAC Visualizer
+# IAC Visualizer
 
 **Parse Terraform/Kubernetes/Helm and render an interactive, scalable dependency graph with impact analysis and drift hints.**
 
 A comprehensive infrastructure-as-code visualization tool that automatically discovers dependencies and relationships across Terraform, Kubernetes, and Helm configurations with a modern React-based web interface.
 
-[![GitHub license](https://img.shields.io/github/license/Shaktijha163/iac-visualizer)](https://github.com/Shaktijha163/iac-visualizer/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Shaktijha163/iac-visualizer)](https://github.com/Shaktijha163/iac-visualizer/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Shaktijha163/iac-visualizer)](https://github.com/Shaktijha163/iac-visualizer/network)
 
-## 🌟 Features
+##  Features
 
 ### Backend Capabilities
 - **Multi-Format Support**: Parse Terraform plans, Kubernetes manifests, and Helm charts
@@ -25,7 +22,7 @@ A comprehensive infrastructure-as-code visualization tool that automatically dis
 - **Responsive Design**: Works seamlessly across desktop and mobile devices
 - **Error Handling**: Comprehensive error display with detailed feedback
 
-## 🎨 Web Interface
+##  Web Interface
 
 The web application provides an intuitive interface for uploading and visualizing infrastructure code:
 
@@ -41,7 +38,7 @@ The web application provides an intuitive interface for uploading and visualizin
 ![Helm Screenshot](images/ss_helm.png)
 ![Helm Screenshot](images/image.png)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 iac-visualizer/
@@ -72,7 +69,7 @@ iac-visualizer/
 └── requirements.txt         # Python dependencies
 ```
 
-## 🚀 Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 - Python 3.8+
@@ -122,7 +119,7 @@ python -m server.app
 
 The API server will be available at `http://localhost:8000`
 
-## 🖥️ Usage
+##  Usage
 
 ### Web Interface
 
@@ -179,7 +176,7 @@ curl http://localhost:8000/api/examples/kubernetes
 curl http://localhost:8000/api/examples/helm
 ```
 
-## 📊 Example Usage
+## Example Usage
 
 ### Test with Provided Examples
 
@@ -203,7 +200,7 @@ python cli/main.py ingest "examples/kubernetes/*.yaml" --type kubernetes
 2. **Kubernetes Cluster**: Upload multiple YAML files to visualize service relationships
 3. **Helm Charts**: Upload packaged charts to understand template dependencies
 
-## 🎯 Graph Output Format
+##  Graph Output Format
 
 The tool generates JSON graphs with the following structure:
 
@@ -228,7 +225,7 @@ The tool generates JSON graphs with the following structure:
 }
 ```
 
-## 🔧 Development
+## Development
 
 ### Frontend Development
 
@@ -260,51 +257,3 @@ uvicorn server.app:app --reload
 4. Update frontend file upload component
 5. Add tests and examples
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Backend Connection Error**: Ensure the backend server is running on `http://localhost:8000`
-2. **File Upload Fails**: Check that you're uploading the correct file format for the selected type
-3. **Graph Not Rendering**: Verify that the uploaded file contains valid infrastructure code
-4. **Helm Charts Not Working**: Ensure you have Helm CLI installed and the chart is properly packaged
-
-### Error Messages
-
-- **"body.files: Field required"**: Use the correct endpoint for your file type
-- **"Objects are not valid as a React child"**: This has been fixed in the latest version
-- **"body.chart: Field required"**: Upload both chart and values files for Helm
-
-## 🌟 Roadmap
-
-- [ ] Support for AWS CDK
-- [ ] Support for Azure ARM templates
-- [ ] Real-time collaboration features
-- [ ] Advanced graph analytics
-- [ ] Export to various formats (PNG, SVG, PDF)
-- [ ] Integration with CI/CD pipelines
-- [ ] Docker containerization
-- [ ] Cloud deployment guides
-
-## 📞 Support
-
-If you have any questions or issues, please:
-1. Check the [Issues](https://github.com/Shaktijha163/iac-visualizer/issues) page
-2. Create a new issue with detailed description
-3. Join our community discussions
-
----
-
-Made with ❤️ by [Shakti Jha](https://github.com/Shaktijha163)
