@@ -35,6 +35,11 @@ The web application provides an intuitive interface for uploading and visualizin
 - **Legend**: Color-coded legend to understand different resource types
 - **Export Options**: Download graphs for documentation or sharing
 
+
+## Screenshot
+
+![Helm Screenshot](images/ss_helm.png)
+
 ## 📁 Project Structure
 
 ```
