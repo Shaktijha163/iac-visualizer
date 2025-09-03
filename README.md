@@ -39,6 +39,7 @@ The web application provides an intuitive interface for uploading and visualizin
 ## Screenshot
 
 ![Helm Screenshot](images/ss_helm.png)
+![Helm Screenshot](images/image.png)
 
 ## 📁 Project Structure
 
