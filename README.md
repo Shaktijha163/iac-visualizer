@@ -35,8 +35,6 @@ The web application provides an intuitive interface for uploading and visualizin
 - **Legend**: Color-coded legend to understand different resource types
 - **Export Options**: Download graphs for documentation or sharing
 
-![Web Interface Screenshot](https://via.placeholder.com/800x400?text=IAC+Visualizer+Web+Interface)
-
 ## 📁 Project Structure
 
 ```
