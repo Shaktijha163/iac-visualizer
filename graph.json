@@ -1,0 +1,725 @@
+{
+  "nodes": [
+    {
+      "id": "k8s:networkpolicy:default/test-release-redis",
+      "type": "k8s.networkpolicy",
+      "name": "test-release-redis",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "networkpolicy",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {
+          "podSelector": {
+            "matchLabels": {
+              "app.kubernetes.io/instance": "test-release",
+              "app.kubernetes.io/name": "redis"
+            }
+          },
+          "policyTypes": [
+            "Ingress",
+            "Egress"
+          ],
+          "egress": [
+            {}
+          ],
+          "ingress": [
+            {
+              "ports": [
+                {
+                  "port": 6379
+                }
+              ]
+            }
+          ]
+        },
+        "metadata": {
+          "name": "test-release-redis",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:poddisruptionbudget:default/test-release-redis-master",
+      "type": "k8s.poddisruptionbudget",
+      "name": "test-release-redis-master",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "poddisruptionbudget",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {
+          "maxUnavailable": 1,
+          "selector": {
+            "matchLabels": {
+              "app.kubernetes.io/instance": "test-release",
+              "app.kubernetes.io/name": "redis",
+              "app.kubernetes.io/component": "master"
+            }
+          }
+        },
+        "metadata": {
+          "name": "test-release-redis-master",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7",
+            "app.kubernetes.io/component": "master"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:serviceaccount:default/test-release-redis-master",
+      "type": "k8s.serviceaccount",
+      "name": "test-release-redis-master",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "serviceaccount",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {},
+        "metadata": {
+          "name": "test-release-redis-master",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:secret:default/test-release-redis",
+      "type": "k8s.secret",
+      "name": "test-release-redis",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "secret",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {},
+        "metadata": {
+          "name": "test-release-redis",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:configmap:default/test-release-redis-configuration",
+      "type": "k8s.configmap",
+      "name": "test-release-redis-configuration",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "configmap",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {},
+        "metadata": {
+          "name": "test-release-redis-configuration",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:configmap:default/test-release-redis-health",
+      "type": "k8s.configmap",
+      "name": "test-release-redis-health",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "configmap",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {},
+        "metadata": {
+          "name": "test-release-redis-health",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:configmap:default/test-release-redis-scripts",
+      "type": "k8s.configmap",
+      "name": "test-release-redis-scripts",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "configmap",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {},
+        "metadata": {
+          "name": "test-release-redis-scripts",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:service:default/test-release-redis-headless",
+      "type": "k8s.service",
+      "name": "test-release-redis-headless",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "service",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {
+          "type": "ClusterIP",
+          "clusterIP": "None",
+          "ports": [
+            {
+              "name": "tcp-redis",
+              "port": 6379,
+              "targetPort": "redis"
+            }
+          ],
+          "selector": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/name": "redis"
+          }
+        },
+        "metadata": {
+          "name": "test-release-redis-headless",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:service:default/test-release-redis-master",
+      "type": "k8s.service",
+      "name": "test-release-redis-master",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "service",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {
+          "type": "ClusterIP",
+          "internalTrafficPolicy": "Cluster",
+          "sessionAffinity": "None",
+          "ports": [
+            {
+              "name": "tcp-redis",
+              "port": 6379,
+              "targetPort": "redis",
+              "nodePort": null
+            }
+          ],
+          "selector": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/component": "master"
+          }
+        },
+        "metadata": {
+          "name": "test-release-redis-master",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7",
+            "app.kubernetes.io/component": "master"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:service:default/web-app",
+      "type": "k8s.service",
+      "name": "web-app",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "service",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 80,
+              "targetPort": 80
+            }
+          ],
+          "selector": {
+            "app": "web-app"
+          }
+        },
+        "metadata": {
+          "name": "web-app"
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:deployment:default/web-app",
+      "type": "k8s.deployment",
+      "name": "web-app",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "deployment",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {
+          "replicas": 3,
+          "selector": {
+            "matchLabels": {
+              "app": "web-app"
+            }
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app": "web-app"
+              }
+            },
+            "spec": {
+              "containers": [
+                {
+                  "name": "web-app",
+                  "image": "nginx:latest",
+                  "ports": [
+                    {
+                      "containerPort": 80
+                    }
+                  ],
+                  "env": [
+                    {
+                      "name": "REDIS_HOST",
+                      "value": "web-app-redis"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "metadata": {
+          "name": "web-app",
+          "labels": {
+            "app": "web-app",
+            "chart": "web-app-0.1.0"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "k8s:statefulset:default/test-release-redis-master",
+      "type": "k8s.statefulset",
+      "name": "test-release-redis-master",
+      "namespace": "default",
+      "group": null,
+      "attributes": {
+        "kind": "statefulset",
+        "namespace": "default",
+        "source_file": "/tmp/tmp6anjrju5.yaml",
+        "spec": {
+          "replicas": 1,
+          "revisionHistoryLimit": 10,
+          "selector": {
+            "matchLabels": {
+              "app.kubernetes.io/instance": "test-release",
+              "app.kubernetes.io/name": "redis",
+              "app.kubernetes.io/component": "master"
+            }
+          },
+          "serviceName": "test-release-redis-headless",
+          "updateStrategy": {
+            "type": "RollingUpdate"
+          },
+          "template": {
+            "metadata": {
+              "labels": {
+                "app.kubernetes.io/instance": "test-release",
+                "app.kubernetes.io/managed-by": "Helm",
+                "app.kubernetes.io/name": "redis",
+                "app.kubernetes.io/version": "8.2.1",
+                "helm.sh/chart": "redis-22.0.7",
+                "app.kubernetes.io/component": "master"
+              },
+              "annotations": {
+                "checksum/configmap": "2a9ab4a5432825504d910f022638674ce88eaefe9f9f595ad8bc107377d104fb",
+                "checksum/health": "aff24913d801436ea469d8d374b2ddb3ec4c43ee7ab24663d5f8ff1a1b6991a9",
+                "checksum/scripts": "0717e77fd3bb941f602860e9be4f2ed87b481cddeadf37be463f8512ecde0c3e",
+                "checksum/secret": "3d9f3e41a50aa56ecbb63a57baf1984c5978711caefa54b9d4b9a0b428e46f9e"
+              }
+            },
+            "spec": {
+              "securityContext": {
+                "fsGroup": 1001,
+                "fsGroupChangePolicy": "Always",
+                "supplementalGroups": [],
+                "sysctls": []
+              },
+              "serviceAccountName": "test-release-redis-master",
+              "automountServiceAccountToken": false,
+              "affinity": {
+                "podAffinity": null,
+                "podAntiAffinity": {
+                  "preferredDuringSchedulingIgnoredDuringExecution": [
+                    {
+                      "podAffinityTerm": {
+                        "labelSelector": {
+                          "matchLabels": {
+                            "app.kubernetes.io/instance": "test-release",
+                            "app.kubernetes.io/name": "redis",
+                            "app.kubernetes.io/component": "master"
+                          }
+                        },
+                        "topologyKey": "kubernetes.io/hostname"
+                      },
+                      "weight": 1
+                    }
+                  ]
+                },
+                "nodeAffinity": null
+              },
+              "enableServiceLinks": true,
+              "terminationGracePeriodSeconds": 30,
+              "containers": [
+                {
+                  "name": "redis",
+                  "image": "docker.io/bitnami/redis:8.2.1-debian-12-r0",
+                  "imagePullPolicy": "IfNotPresent",
+                  "securityContext": {
+                    "allowPrivilegeEscalation": false,
+                    "capabilities": {
+                      "drop": [
+                        "ALL"
+                      ]
+                    },
+                    "readOnlyRootFilesystem": true,
+                    "runAsGroup": 1001,
+                    "runAsNonRoot": true,
+                    "runAsUser": 1001,
+                    "seLinuxOptions": {},
+                    "seccompProfile": {
+                      "type": "RuntimeDefault"
+                    }
+                  },
+                  "command": [
+                    "/bin/bash"
+                  ],
+                  "args": [
+                    "-ec",
+                    "/opt/bitnami/scripts/start-scripts/start-master.sh"
+                  ],
+                  "env": [
+                    {
+                      "name": "BITNAMI_DEBUG",
+                      "value": "false"
+                    },
+                    {
+                      "name": "REDIS_REPLICATION_MODE",
+                      "value": "master"
+                    },
+                    {
+                      "name": "ALLOW_EMPTY_PASSWORD",
+                      "value": "no"
+                    },
+                    {
+                      "name": "REDIS_PASSWORD_FILE",
+                      "value": "/opt/bitnami/redis/secrets/redis-password"
+                    },
+                    {
+                      "name": "REDIS_TLS_ENABLED",
+                      "value": "no"
+                    },
+                    {
+                      "name": "REDIS_PORT",
+                      "value": "6379"
+                    }
+                  ],
+                  "ports": [
+                    {
+                      "name": "redis",
+                      "containerPort": 6379
+                    }
+                  ],
+                  "livenessProbe": {
+                    "initialDelaySeconds": 20,
+                    "periodSeconds": 5,
+                    "timeoutSeconds": 6,
+                    "successThreshold": 1,
+                    "failureThreshold": 5,
+                    "exec": {
+                      "command": [
+                        "/bin/bash",
+                        "-ec",
+                        "/health/ping_liveness_local.sh 5"
+                      ]
+                    }
+                  },
+                  "readinessProbe": {
+                    "initialDelaySeconds": 20,
+                    "periodSeconds": 5,
+                    "timeoutSeconds": 2,
+                    "successThreshold": 1,
+                    "failureThreshold": 5,
+                    "exec": {
+                      "command": [
+                        "/bin/bash",
+                        "-ec",
+                        "/health/ping_readiness_local.sh 1"
+                      ]
+                    }
+                  },
+                  "resources": {
+                    "limits": {
+                      "cpu": "150m",
+                      "ephemeral-storage": "2Gi",
+                      "memory": "192Mi"
+                    },
+                    "requests": {
+                      "cpu": "100m",
+                      "ephemeral-storage": "50Mi",
+                      "memory": "128Mi"
+                    }
+                  },
+                  "volumeMounts": [
+                    {
+                      "name": "start-scripts",
+                      "mountPath": "/opt/bitnami/scripts/start-scripts"
+                    },
+                    {
+                      "name": "health",
+                      "mountPath": "/health"
+                    },
+                    {
+                      "name": "redis-password",
+                      "mountPath": "/opt/bitnami/redis/secrets/"
+                    },
+                    {
+                      "name": "redis-data",
+                      "mountPath": "/data"
+                    },
+                    {
+                      "name": "config",
+                      "mountPath": "/opt/bitnami/redis/mounted-etc"
+                    },
+                    {
+                      "name": "empty-dir",
+                      "mountPath": "/opt/bitnami/redis/etc/",
+                      "subPath": "app-conf-dir"
+                    },
+                    {
+                      "name": "empty-dir",
+                      "mountPath": "/tmp",
+                      "subPath": "tmp-dir"
+                    }
+                  ]
+                }
+              ],
+              "volumes": [
+                {
+                  "name": "start-scripts",
+                  "configMap": {
+                    "name": "test-release-redis-scripts",
+                    "defaultMode": 493
+                  }
+                },
+                {
+                  "name": "health",
+                  "configMap": {
+                    "name": "test-release-redis-health",
+                    "defaultMode": 493
+                  }
+                },
+                {
+                  "name": "redis-password",
+                  "secret": {
+                    "secretName": "test-release-redis",
+                    "items": [
+                      {
+                        "key": "redis-password",
+                        "path": "redis-password"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "config",
+                  "configMap": {
+                    "name": "test-release-redis-configuration"
+                  }
+                },
+                {
+                  "name": "empty-dir",
+                  "emptyDir": {}
+                }
+              ]
+            }
+          },
+          "volumeClaimTemplates": [
+            {
+              "apiVersion": "v1",
+              "kind": "PersistentVolumeClaim",
+              "metadata": {
+                "name": "redis-data",
+                "labels": {
+                  "app.kubernetes.io/instance": "test-release",
+                  "app.kubernetes.io/name": "redis",
+                  "app.kubernetes.io/component": "master"
+                }
+              },
+              "spec": {
+                "accessModes": [
+                  "ReadWriteOnce"
+                ],
+                "resources": {
+                  "requests": {
+                    "storage": "8Gi"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "metadata": {
+          "name": "test-release-redis-master",
+          "namespace": "default",
+          "labels": {
+            "app.kubernetes.io/instance": "test-release",
+            "app.kubernetes.io/managed-by": "Helm",
+            "app.kubernetes.io/name": "redis",
+            "app.kubernetes.io/version": "8.2.1",
+            "helm.sh/chart": "redis-22.0.7",
+            "app.kubernetes.io/component": "master"
+          }
+        },
+        "helm_chart": "examples/helm/web-app-0.1.0.tgz",
+        "source": "helm"
+      }
+    },
+    {
+      "id": "helm:dependency:redis",
+      "type": "helm.dependency",
+      "name": "redis",
+      "namespace": null,
+      "group": null,
+      "attributes": {
+        "version": "~0.1.0",
+        "repository": "https://charts.bitnami.com/bitnami",
+        "condition": "redis.enabled",
+        "chart": "web-app"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "k8s:service:default/test-release-redis-headless",
+      "to_id": "k8s:statefulset:default/test-release-redis-master",
+      "reason": "selector_match"
+    },
+    {
+      "from_id": "k8s:service:default/test-release-redis-master",
+      "to_id": "k8s:statefulset:default/test-release-redis-master",
+      "reason": "selector_match"
+    },
+    {
+      "from_id": "k8s:service:default/web-app",
+      "to_id": "k8s:deployment:default/web-app",
+      "reason": "selector_match"
+    }
+  ],
+  "meta": {
+    "parser": "helm",
+    "chart_path": "examples/helm/web-app-0.1.0.tgz",
+    "values_files": [],
+    "namespace": "default",
+    "release_name": "test-release",
+    "chart_metadata": {
+      "name": "web-app",
+      "version": "0.1.0",
+      "description": "A simple web application",
+      "dependencies": [
+        {
+          "condition": "redis.enabled",
+          "name": "redis",
+          "repository": "https://charts.bitnami.com/bitnami",
+          "version": "~0.1.0"
+        }
+      ]
+    }
+  }
+}
